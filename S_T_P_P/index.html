@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+		</style>
+		<script type="importmap">
+		  {
+		    "imports": {
+		      "three": "https://cdn.jsdelivr.net/npm/three@0.167.1/build/three.module.js",
+		      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.167.1/examples/jsm/"
+		    }
+		  }
+		</script>
+	</head>
+	<body>
+		<script type="module">
+			function getModuleFromUrl() {
+			  const params = new URLSearchParams(window.location.search);
+			  return params.get('module') || 'terra';
+			}
+ 
+			const moduleName = getModuleFromUrl();
+			const modulePath = `./JS/${moduleName}.js`;
+ 
+			import(modulePath).catch((err) => console.error('Erro ao carregar o módulo:', err));
+		  </script>
+	</body>
+</html>
