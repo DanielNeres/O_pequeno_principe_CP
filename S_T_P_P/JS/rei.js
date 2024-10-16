@@ -74,7 +74,7 @@ function animate() {
 
     reiMesh.rotation.y = angleY;
     reiMesh.rotation.z = (2 * Math.sin(angleY)) / Math.PI;
-
+    bebadoMesh.rotation.x=(4*Math.sin(theta)/2*Math.cos(theta);
     phi += 0.01;
     const radius = 7;
     principeMesh.position.set(
