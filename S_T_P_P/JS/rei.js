@@ -25,6 +25,19 @@ const geometryRei = new THREE.PlaneGeometry(3, 4);
 const materialRei = new THREE.MeshPhongMaterial({ map: textureRei, transparent: true });
 const reiMesh = new THREE.Mesh(geometryRei, materialRei);
 
+const geometry_bebador = new THREE.SphereGeometry(9,100,100);
+const material_bebador = new THREE.MeshPhongMaterial({ color: 0xffffff });
+const Plat_bebador = new THREE.Mesh(geometry_bebador, material_bebador);
+scene.add(Plat_bebador);
+
+const loadere = new THREE.TextureLoader();
+const texturebebabor = loader.load('../images/superficeplanetabebabojpg.jpg');
+
+const geometry_bebado = new THREE.PlaneGeometry(3, 4);
+const material_bebado = new THREE.MeshPhongMaterial({ map: texturebebabor, transparent: true });
+const bebadoMesh = new THREE.Mesh(geometry_bebado, material_bebado);
+bebadoMesh.position.set(1.0,0.5,2.0);
+
 const geometryPrincipe = new THREE.PlaneGeometry(3, 4);
 const materialPrincipe = new THREE.MeshPhongMaterial({ map: textureRei, transparent: true });
 const principeMesh = new THREE.Mesh(geometryPrincipe, materialPrincipe);
@@ -50,7 +63,7 @@ const speed = 0.05; // Velocidade de movimento do príncipe
 
 function animate() {
     Plat_rei.rotation.y += 0.001;
-
+    Plat_bebador.rotation.x+=0.1;
     theta = 0.005 + theta;
     directionalLight.position.x = 100 * Math.cos(theta);
     directionalLight.position.z = 100 * Math.sin(theta);
