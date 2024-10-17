@@ -36,7 +36,7 @@ const texturebebabor = loadere.load('../images/bebida.jpg');
 const geometry_bebado = new THREE.PlaneGeometry(3, 4);
 const material_bebado = new THREE.MeshPhongMaterial({ map: texturebebabor, transparent: true });
 const bebadoMesh = new THREE.Mesh(geometry_bebado, material_bebado);
-bebadoMesh.position.set(1.0,0.5,2.0);
+bebadoMesh.position.set(1.0,2.0,2.0);
 
 const geometryPrincipe = new THREE.PlaneGeometry(3, 4);
 const materialPrincipe = new THREE.MeshPhongMaterial({ map: textureRei, transparent: true });
@@ -47,7 +47,10 @@ scene.add(principeMesh);
 reiMesh.position.set(0, 5.8, 0);
 reiMesh.rotation.x = -0.55;
 scene.add(reiMesh);
-
+bebadoMesh.rotation.x=-0.005;
+bebadoMesh.rotation.y+=-0.005;
+bebadoMesh.rotation.z+=0.005;
+scene.add(bebadoMesh);
 const directionalLight = new THREE.DirectionalLight(0xffcc44, 4);
 directionalLight.position.set(100, 10, -200);
 scene.add(directionalLight);
