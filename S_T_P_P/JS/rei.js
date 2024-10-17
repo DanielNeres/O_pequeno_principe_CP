@@ -49,7 +49,7 @@ reiMesh.rotation.x = -0.55;
 scene.add(reiMesh);
 bebadoMesh.rotation.x=-0.005;
 bebadoMesh.rotation.y+=-0.005;
-bebadoMesh.rotation.z+=0.005;
+bebadoMesh.rotation.z+=-0.005;
 scene.add(bebadoMesh);
 const directionalLight = new THREE.DirectionalLight(0xffcc44, 4);
 directionalLight.position.set(100, 10, -200);
