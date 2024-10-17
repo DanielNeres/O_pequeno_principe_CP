@@ -31,7 +31,7 @@ const Plat_bebador = new THREE.Mesh(geometry_bebador, material_bebador);
 scene.add(Plat_bebador);
 
 const loadere = new THREE.TextureLoader();
-const texturebebabor = loader.load('../images/superficeplanetabebabojpg.jpg');
+const texturebebabor = loader.load('../images/bebida.jpg');
 
 const geometry_bebado = new THREE.PlaneGeometry(3, 4);
 const material_bebado = new THREE.MeshPhongMaterial({ map: texturebebabor, transparent: true });
@@ -82,7 +82,13 @@ function animate() {
         5.8,
         radius * Math.sin(phi)
     );
-
+    bebadoMesh.position.set(
+     phi+=0.02;
+     const radiues= 8;
+     radiues * Math.cos(phi),
+     6.8,
+     radiues * Math.sin(phi)
+    );
     renderer.render(scene, camera);
 }
 
