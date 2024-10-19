@@ -33,12 +33,11 @@ material_sol.map = solTexture;
 scene.add( sol );
 sol.position.x = 100;
 
-const jupiterTexture = new THREE.TextureLoader().load("../images/superfice_jupiter.jpg");
-var bumpMap_jupiter = new THREE.TextureLoader().load("../images/profundidade_jupiter.jpg");
-const geometry_jupiter = new THREE.SphereGeometry( 30, 150, 150);
-const material_jupiter= new THREE.MeshPhongMaterial({bumpMap: bumpMap_jupiter, bumpScale: 35 });
-const jupiter = new THREE.Mesh( geometry_jupiter, material_jupiter );
+const jupiterTexture = new THREE.TextureLoader().load("../images/profundidade_jupiter.jpg");
+const geometry_jupiter = new THREE.SphereGeometry( 30, 50, 50);
+const material_jupiter= new THREE.MeshPhongMaterial();
 material_jupiter.map = jupiterTexture;
+const jupiter = new THREE.Mesh( geometry_jupiter, material_jupiter );
 scene.add( jupiter );
 jupiter.position.x = 400;
 
@@ -58,7 +57,7 @@ directionalLight.position.set(100,10,-200);
 directionalLight.name='directional';
 scene.add(directionalLight);
 
-var ambientLight = new THREE.AmbientLight(0x111111);
+var ambientLight = new THREE.AmbientLight(0xffffff);
 ambientLight.name='ambient';
 scene.add(ambientLight);
  
@@ -69,7 +68,6 @@ function animate() {
 	terra.rotation.y += 0.001;
 	lua.rotation.y += 0.001;
 	sol.rotation.y+=0.10;
-    jupiter.rotation.x+=0.20;
 	renderer.render( scene, camera );
 }
 renderer.setAnimationLoop( animate );
