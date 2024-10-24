@@ -248,7 +248,13 @@ const aviao = { model: null };
 let raio = 7;
 
 loadModel(aviao);
-
+const raioColisaoAviao=1;
+const raioColisaoRei=2;
+const raioColisaoAcendedor=2;
+function detectarColisao(esfera1,raio1,esfera2,raio2){
+    const distancia=esfera1.distanceTo(esfera2);
+    return distancia<raio1+raio2;
+}
 function animate() {
     // para implementações futuras
     if (!fim) {
