@@ -61,7 +61,10 @@ scene.add(directionalLight);
 
 var ambientLight = new THREE.AmbientLight(0x747474);
 scene.add(ambientLight);
-
+function tocaAudio(arquivo){
+    const audio= new Audio(arquivo);
+    audio.play();
+ }
 
 function cria_balao(text, tamanho_fonte) {
     const canvas = document.createElement('canvas');
@@ -222,6 +225,11 @@ setTimeout(() => {
 
     dialogo_rei.geometry.dispose(); 
     dialogo_rei.geometry = new THREE.PlaneGeometry(10, 4); 
+    tocaAudio('../JS/audios/rei11.mp3');
+    animaBocaRei(true);
+    setTimeout(()=>{
+        animaBocaRei(false);
+    }, 2000);
 }, 5000);
 
 setTimeout(() => {
@@ -231,6 +239,11 @@ setTimeout(() => {
 
     dialogo_rei.geometry.dispose(); 
     dialogo_rei.geometry = new THREE.PlaneGeometry(8, 3);
+    tocaAudio('../JS/audios/rei22.mp3');
+    animaBocaRei(true);
+    setTimeout(()=>{
+        animaBocaRei(false);
+    }, 2000);
 }, 9000);
 
 // retira o dialogo da cena
