@@ -254,6 +254,10 @@ function animate() {
     if (!fim) {
         // esta na cena do rei, carrega o aviao primeiro pra nao explodir o computador
         if (cena_no_rei && aviao.model) {
+            const distanciaRei=aviao.model.position.distanceTo(reiMesh.position);
+                 if(distanciaRei<raioColisaoAviao+raioColisaoRei){
+                    console.log("Colisão com o rei detectada!");
+                 }
             Plat_rei.rotation.y += 0.001;
             reiMesh.lookAt(camera.position);
             luztetha += 0.01; 
@@ -317,6 +321,10 @@ function animate() {
                 }, 25000);
             }
         } else if(aviao.model){
+             const distanciaAcendedor=aviao.model.position.distanceTo(acendedorMesh.position);
+        if(distanciaAcendedor<raioColisaoAviao+raioColisaoAcendedor){
+            console.log("Colisão com o acendedor detectada!");
+        } 
             acendedorMesh.lookAt(camera.position);
             Plat_acendedor.rotation.y += 0.001;
             luztetha += 0.01;
